@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('package_banks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('icon');
-            $table->string('slug');
             $table->timestamps();
         });
     }
