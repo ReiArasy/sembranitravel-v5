@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('package_bookings', function (Blueprint $table) {
             $table->id();
+            $table->
             $table->timestamps();
         });
     }

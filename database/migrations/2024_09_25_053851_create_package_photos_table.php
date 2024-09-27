@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('package_photos', function (Blueprint $table) {
             $table->id();
+            $table->int('package_tour_id');
             $table->timestamps();
         });
     }
