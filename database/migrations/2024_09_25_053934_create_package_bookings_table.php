@@ -25,6 +25,7 @@ return new class extends Migration
             $table->int('sub_total');
             $table->int('insurance');
             $table->int('tax');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
