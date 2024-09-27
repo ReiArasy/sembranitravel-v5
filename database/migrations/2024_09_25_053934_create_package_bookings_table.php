@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('package_bookings', function (Blueprint $table) {
             $table->id();
-            $table->int('package_tour_id');
-            $table->int('user_id');
-            $table->int('quantity');
+            $table->foreignId('package_tour_id')->constrained()->onDelete('cascade');
+            $table->foreignId('package_bank_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('quantity');
             $table->date('start_date');
             $table->date('end_date');
-            $table->int('total_amount');
+            $table->unsignedBigInteger('total_amount');
             $table->boolean('is_paid');
-            $table->varchar('proof');
-            $table->int('package_bank_id');
-            $table->int('sub_total');
-            $table->int('insurance');
-            $table->int('tax');
+            $table->string('proof');
+            $table->unsignedBigInteger('sub_total');
+            $table->unsignedBigInteger('insurance');
+            $table->unsignedBigInteger('tax');
             $table->softDeletes();
             $table->timestamps();
         });
