@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('thumbnail');
-            $table->string('about');
+            $table->text('about');
             $table->string('location');
-            $table->int('price');
-            $table->int('days');
-            $table->int('category_id');
+            $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('days');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
