@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('package_bookings', function (Blueprint $table) {
             $table->id();
-            $table->
+            $table->int('package_tour_id');
+            $table->int('user_id');
+            $table->int('user_id');
+            $table->int('user_id');
+            $table->int('user_id');
+            $table->int('user_id');
+            $table->int('user_id');
+            $table->int('user_id');
             $table->timestamps();
         });
     }
