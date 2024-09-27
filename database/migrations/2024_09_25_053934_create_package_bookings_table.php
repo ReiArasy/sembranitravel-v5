@@ -15,12 +15,16 @@ return new class extends Migration
             $table->id();
             $table->int('package_tour_id');
             $table->int('user_id');
-            $table->int('user_id');
-            $table->int('user_id');
-            $table->int('user_id');
-            $table->int('user_id');
-            $table->int('user_id');
-            $table->int('user_id');
+            $table->int('quantity');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->int('total_amount');
+            $table->boolean('is_paid');
+            $table->varchar('proof');
+            $table->int('package_bank_id');
+            $table->int('sub_total');
+            $table->int('insurance');
+            $table->int('tax');
             $table->timestamps();
         });
     }
