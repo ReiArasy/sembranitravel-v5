@@ -53,7 +53,5 @@ class RolePermissionSeeder extends Seeder
             'password' => bcrypt('123123123')
         ]);
         $user->assignRole($superAdminRole);
-
-
     }
 }
