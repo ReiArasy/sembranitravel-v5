@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;    // Import Role dari spatie/laravel-permission
-use Spatie\Permission\Models\Permission;  // Import Permission dari spatie/laravel-permission
-use App\Models\User;   // Import User model
+use Spatie\Permission\Models\Role;    
+use Spatie\Permission\Models\Permission;  
+use App\Models\User;   
 
 class RolePermissionSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        // Permission list
+        
         $permissions = [
             'manage categories',
             'manage packages',
@@ -25,7 +25,7 @@ class RolePermissionSeeder extends Seeder
             'view orders',
         ];
 
-        // Create or update permissions
+        
         foreach ($permissions as $permission) {
             Permission::firstOrCreate([
                 'name' => $permission
@@ -45,21 +45,20 @@ class RolePermissionSeeder extends Seeder
 
         $customerRole->syncPermissions($customerPermissions); 
 
-        // Create or update 'super_admin' role
         $superAdminRole = Role::firstOrCreate([
             'name' => 'super_admin'
         ]);
 
-        // Create a super admin user
+        
         $user = User::create([
-            'name' => 'Super Admin',
+            'name' => 'ArasyPage',
             'email' => 'super@admin.com',
             'phone_number' => '62881026145249',
             'avatar' => 'images/default-avatar.png',
             'password' => bcrypt('123123123')
         ]);
 
-        // Assign super admin role to the user
+        
         $user->assignRole($superAdminRole);
     }
 }
