@@ -32,12 +32,12 @@ class RolePermissionSeeder extends Seeder
             ]);
         }
 
-        // Create or update 'customer' role
+
         $customerRole = Role::firstOrCreate([
             'name' => 'customer'
         ]);
     
-        // Assign permissions to 'customer' role
+
         $customerPermissions = [
             'checkout package',
             'view orders'
