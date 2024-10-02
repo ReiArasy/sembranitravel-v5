@@ -10,6 +10,6 @@ class Category extends Model
     use HasFactory;
 
     public function tours(){
-        return $this->hasMany(PackageBooking::class, 'user_id');
+        return $this->hasMany(PackageBooking::class);
     }
 }
