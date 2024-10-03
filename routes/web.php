@@ -8,7 +8,9 @@ use App\Http\Controllers\PackageBankController;
 use App\Http\Controllers\PackageBookingController;
 use App\Http\Controllers\FrontController;
 
-
+Route::get('/', [FrontController::class, 'index'])->name('front.index');
+Route::get('/category/{category:slug}', [FrontController::class, 'category'])->name('front.category');
+Route::get('/category/{categoryTour:slug}', [FrontController::class, 'details'])->name('front.details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,6 +30,7 @@ Route::middleware('auth')->group(function () {
         Route::patch('/book/payment/{packageBooking}/save', [FrontController::class, 'book_payment_store'])->name('front.book_payment_store');
         Route::get('/book-finish', [FrontController::class, 'book_finish'])->name('front.book_finish');
     });
+
 
     Route::prefix('admin')->name('admin.')->group(function () {
 
