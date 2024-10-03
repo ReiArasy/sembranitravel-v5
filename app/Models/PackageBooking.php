@@ -23,6 +23,11 @@ class PackageBooking extends Model
         'insurance',
         'tax'
     ];
+
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
    
     // cek costumer yang booking siapa,tour nya apa, bank nya apa
     public function customer(){
