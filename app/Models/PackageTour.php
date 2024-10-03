@@ -7,7 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageTour extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+       'name',
+       'slug',
+       'thumbnail',
+       'about',
+       'location',
+       'price',
+       'days',
+       'category_id'
+     ];
 
     public function category(){
         return $this->belongsTo(Category::class);
