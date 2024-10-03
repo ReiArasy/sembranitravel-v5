@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PackageTourController;
+use App\Http\Controllers\PackageBankController;
+use App\Http\Controllers\PackageBookingController;
 
 Route::get('/', function () {
     return view('welcome');

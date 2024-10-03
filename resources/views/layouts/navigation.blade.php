@@ -24,7 +24,7 @@
                     </x-nav-link>
 
                     <!-- banks -->
-                    <x-nav-link :href="route('admin.banks.index')" :active="request()->routeIs('admin.banks.index')">
+                    <x-nav-link :href="route('admin.package_banks.index')" :active="request()->routeIs('admin.banks.index')">
                         {{ __('Banks') }}
                     </x-nav-link>
 
