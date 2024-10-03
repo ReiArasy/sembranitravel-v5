@@ -7,7 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageBooking extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'package_tour_id',
+        'user_id',
+        'quantity',
+        'start_date',
+        'end_date',
+        'total_amount',
+        'is_paid',
+        'proof',
+        'package_bank_id',
+        'sub_total',
+        'insurance',
+        'tax'
+    ];
    
     // cek costumer yang booking siapa,tour nya apa, bank nya apa
     public function customer(){
