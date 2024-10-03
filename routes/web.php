@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PackageTourController;
 use App\Http\Controllers\PackageBankController;
 use App\Http\Controllers\PackageBookingController;
+use App\Http\Controllers\FrontController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::middleware('can:checkout package')->group(function () {
+        Route::get('/book/{packageTour:slug}', [FrontController::class, 'book'])->name('front.book');
+    });
 
     Route::prefix('admin')->name('admin.')->group(function () {
 
