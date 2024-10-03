@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackagePhoto extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+       'package_tour_id',
+       'photo'
+    ];
 }
