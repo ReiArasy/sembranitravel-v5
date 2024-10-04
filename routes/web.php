@@ -7,6 +7,7 @@ use App\Http\Controllers\PackageTourController;
 use App\Http\Controllers\PackageBankController;
 use App\Http\Controllers\PackageBookingController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/category/{category:slug}', [FrontController::class, 'category'])->name('front.category');
@@ -31,6 +32,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/book-finish', [FrontController::class, 'book_finish'])->name('front.book_finish');
     });
 
+    Route::prefix('dashboard')->name('dashboard.')->group(function (){
+
+        Route::middleware('can:view orders')->group(function () {
+            Route::middleware('can:view orders')->group(function () {
+                Route::get('/my-bookings', [DashboardController::class, 'my_bookings'])->name('bookings');
+                Route::get('/my-bookings/details/{packageBooking}', [DashboardController::class, 'booking_details'])->name('booking.details');
+            });
+        });
+    });
 
     Route::prefix('admin')->name('admin.')->group(function () {
 
