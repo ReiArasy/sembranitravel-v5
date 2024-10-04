@@ -11,7 +11,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/category/{category:slug}', [FrontController::class, 'category'])->name('front.category');
-Route::get('/category/{categoryTour:slug}', [FrontController::class, 'details'])->name('front.details');
+Route::get('/details/{packageTour:slug}', [FrontController::class, 'details'])->name('front.details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,10 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('dashboard')->name('dashboard.')->group(function (){
 
         Route::middleware('can:view orders')->group(function () {
-            Route::middleware('can:view orders')->group(function () {
-                Route::get('/my-bookings', [DashboardController::class, 'my_bookings'])->name('bookings');
-                Route::get('/my-bookings/details/{packageBooking}', [DashboardController::class, 'booking_details'])->name('booking.details');
-            });
+                Route::get('/my-bookings', [DashboardController::class, 'my_bookings'])
+                ->name('bookings');
+                Route::get('/my-bookings/details/{packageBooking}', [DashboardController::class, 'booking_details'])
+                ->name('booking.details');
         });
     });
 
