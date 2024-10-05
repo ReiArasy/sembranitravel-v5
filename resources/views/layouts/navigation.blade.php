@@ -20,7 +20,7 @@
 
                     <!-- categories -->
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
-                        {{ __('categories') }}
+                        {{ __('Categories') }}
                     </x-nav-link>
 
                     <!-- banks -->
