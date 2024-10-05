@@ -18,6 +18,12 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    @role('customer')
+                    <x-nav-link :href="route('dashboard.bookings')" :active="request()->routeIs('dashboard.bookings')">
+                        {{ __('My Bookings') }}
+                    </x-nav-link>
+                    @endrole
+
                     <!-- categories -->
                      @role('super_admin')
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
