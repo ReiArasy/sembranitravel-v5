@@ -19,6 +19,7 @@
                     </x-nav-link>
 
                     <!-- categories -->
+                     
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
                         {{ __('Categories') }}
                     </x-nav-link>
@@ -32,6 +33,11 @@
                     <x-nav-link :href="route('admin.package_tours.index')" :active="request()->routeIs('admin.package_tours.index')">
                         {{ __('Package Tours') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin.package_bookings.index')" :active="request()->routeIs('admin.package_bookings.index')">
+                        {{ __('Package Bookings') }}
+                    </x-nav-link>
+                    
                 </div>
             </div>
 
