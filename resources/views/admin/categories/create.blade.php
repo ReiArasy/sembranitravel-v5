@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg"> 
+            <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg text-black"> 
                 <form method="POST" action="{{route('admin.categories.store')}}" enctype="multipart/form-data">
                     @csrf
 
@@ -25,7 +25,7 @@
 
                     <div class="flex items-center justify-end mt-4">
             
-                        <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                        <button type="submit" class="font-bold py-3 px-5 bg-indigo-700 text-white rounded-full">
                             Add New Category
                         </button>
                     </div>
