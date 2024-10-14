@@ -23,6 +23,7 @@ class UpdatePackageBookingRequest extends FormRequest
     {
         return [
             //
+            'package_bank_id' => ['required', 'integer'],
         ];
     }
 }
