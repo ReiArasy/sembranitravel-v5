@@ -23,6 +23,14 @@ class StorePackageTourRequest extends FormRequest
     {
         return [
             //
+            'name' => ['required', 'string', 'max:255'],
+            'location' => ['required', 'string', 'max:255'],
+            'thumbnail' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'category_id' => ['required', 'integer'],
+            'price' => ['required', 'integer'],
+            'days' => ['required', 'integer'],
+            'about' => ['required', 'string', 'max:65535'],
+            'package_photo.*' => ['required', 'image', 'mimes:png,jpg,jpeg'],
         ];
     }
 }
