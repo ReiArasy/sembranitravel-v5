@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Str;
 
 
 class CategoryController extends Controller
@@ -46,6 +46,8 @@ class CategoryController extends Controller
             }
 
             $validated['slug'] = Str::slug($validate['name']);
+
+            $newCategory = Category::create($validated);
 
         });
     }
