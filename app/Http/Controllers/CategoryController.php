@@ -49,6 +49,8 @@ class CategoryController extends Controller
 
             $newCategory = Category::create($validated);
 
+            return redirect()->route('admin.categories.index');
+
         });
     }
 

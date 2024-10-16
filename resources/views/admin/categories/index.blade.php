@@ -19,6 +19,7 @@
                     <div class="flex flex-row items-center gap-x-3">
                         <img src=" " alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                         <div class="flex flex-col">
+                            
                             <h3 class="text-indigo-950 text-xl font-bold">Name</h3>
                         </div>
                     </div> 
