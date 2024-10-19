@@ -29,10 +29,10 @@
                         </h3>
                     </div>
                     <div class="hidden md:flex flex-row items-center gap-x-3">
-                        <a href=" " class="font-bold py-3 px-5 bg-indigo-700 text-white rounded-full">
+                        <a href="{{route('admin.categories.edit', $category)}}" class="font-bold py-3 px-5 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action=" " method="POST">
+                        <form action="" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="font-bold py-3 px-5 bg-red-700 text-white rounded-full">
