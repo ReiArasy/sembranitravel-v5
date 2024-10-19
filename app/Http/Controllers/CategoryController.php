@@ -77,6 +77,22 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+        DB::transaction(function() use ($request, $category){
+        
+            $validated = $request->validated();
+    
+            if($request->hasFile('icon')){
+                $iconPath = $request->file('icon')->store('icons', 'public');
+                $validated['icon'] = $iconPath;
+            }
+    
+            $validated['slug'] = Str::slug($validated['name']);
+
+            $category->update($validated);
+    
+        });
+    
+        return redirect()->route('admin.categories.index')->with('success', 'Category created successfully.');
     }
 
     /**
