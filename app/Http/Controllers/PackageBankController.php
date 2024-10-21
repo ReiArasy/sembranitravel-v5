@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\Http\Requests\PackageBankRequest;
+use App\Http\Requests\PackageBankRequest;
 use App\Models\PackageBank;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,6 +15,8 @@ class PackageBankController extends Controller
     public function index()
     {
         //
+        $package_banks = PackageBank::orderByDesc('id')->paginate(10);
+        return view('admin.package_banks.index', compact('package_banks'));
     }
 
     /**
