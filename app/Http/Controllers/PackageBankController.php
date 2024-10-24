@@ -94,5 +94,10 @@ class PackageBankController extends Controller
     public function destroy(PackageBank $packageBank)
     {
         //
+        DB::transaction(function() use ($packageBank){
+            $packageBank->delete();
+        });
+
+        return redirect()->route('admin.banks.index')->with('success', 'Bank Deleted successfully.');
     }
 }
