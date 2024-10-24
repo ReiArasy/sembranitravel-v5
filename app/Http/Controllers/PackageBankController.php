@@ -72,6 +72,19 @@ class PackageBankController extends Controller
     public function update(Request $request, PackageBank $packageBank)
     {
         //
+        DB::transaction(function() use ($request, $packageBank){
+
+            $validated = $request->validated();
+
+            if($request->hasFile('logo')){
+                $logoPath = $request->file('logo')->store('logos', 'public');
+                $validated['logo'] = $logoPath;
+            }
+
+            $packageBank->update($validated);
+        });
+
+        return redirect()->route('admin.banks.index')->with('success', 'Bank created successfully.');
        
     }
 
