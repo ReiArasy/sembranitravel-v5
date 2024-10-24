@@ -16,7 +16,7 @@ class PackageBankController extends Controller
     {
         //
         $banks = PackageBank::orderByDesc('id')->paginate(10);
-        return view('admin.package_banks.index', compact('banks'));
+        return view('admin.banks.index', compact('banks'));
     }
 
     /**
