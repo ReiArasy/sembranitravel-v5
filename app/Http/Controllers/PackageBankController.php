@@ -64,6 +64,7 @@ class PackageBankController extends Controller
     public function edit(PackageBank $packageBank)
     {
         //
+        return view('admin.banks.edit', compact('packageBank'));
     }
 
     /**
