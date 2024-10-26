@@ -34,7 +34,7 @@
                         <a href="{{route('admin.package_banks.edit', $bank)}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action=" " method="POST">
+                        <form action="{{route('admin.package_banks.destroy', $bank)}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
