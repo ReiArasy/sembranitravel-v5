@@ -99,6 +99,6 @@ class PackageBankController extends Controller
             $packageBank->delete();
         });
 
-        return redirect()->route('admin.banks.index')->with('success', 'Bank Deleted successfully.');
+        return redirect()->route('admin.package_banks.index')->with('success', 'Bank Deleted successfully.');
     }
 }
