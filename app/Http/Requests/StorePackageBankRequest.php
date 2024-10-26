@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Requests\StorePackageBankRequest;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorePackageBankRequest extends FormRequest
@@ -11,7 +12,7 @@ class StorePackageBankRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**

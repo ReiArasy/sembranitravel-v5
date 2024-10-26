@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PackageBankRequest;
+use App\Http\Requests\StorePackageBankRequest;
 use App\Models\PackageBank;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PackageBankController extends Controller
 {
