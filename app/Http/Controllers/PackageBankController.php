@@ -85,7 +85,7 @@ class PackageBankController extends Controller
             $packageBank->update($validated);
         });
 
-        return redirect()->route('admin.banks.index')->with('success', 'Bank created successfully.');
+        return redirect()->route('admin.package_banks.index')->with('success', 'Bank created successfully.');
        
     }
 
