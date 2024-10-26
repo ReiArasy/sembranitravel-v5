@@ -70,7 +70,7 @@ class PackageBankController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PackageBank $packageBank)
+    public function update(UpdatePackageBankRequest $request, PackageBank $packageBank)
     {
         //
         DB::transaction(function() use ($request, $packageBank){
