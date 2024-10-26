@@ -31,7 +31,7 @@
                         </h3>
                     </div>
                     <div class="hidden md:flex flex-row items-center gap-x-3">
-                        <a href=" " class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                        <a href="{{route('admin.package_banks.edit', $bank)}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
                         <form action=" " method="POST">
