@@ -45,7 +45,8 @@
                 </div>
                 @empty
                 <p>Data bank belum tersedia</p>
-                
+                @endforelse
+
 
                 
 
