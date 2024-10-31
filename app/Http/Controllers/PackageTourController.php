@@ -14,6 +14,7 @@ class PackageTourController extends Controller
     public function index()
     {
         //
+        $package_tours = PackageTour::orderByDesc('id')->paginate(10);
     }
 
     /**
