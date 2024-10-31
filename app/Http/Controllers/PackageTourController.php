@@ -15,7 +15,8 @@ class PackageTourController extends Controller
     {
         //
         $package_tours = PackageTour::orderByDesc('id')->paginate(10);
-    }
+        return view('admin.package_tours.index', compact ('package_tours'));
+    }   
 
     /**
      * Show the form for creating a new resource.
