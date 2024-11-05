@@ -42,7 +42,8 @@ class PackageTourController extends Controller
             $validated = $request->validated();
 
             if($request->hasFile('thumbnail')){
-                $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+                $thumbnailPath = 
+                $request->file('thumbnail')->store('thumbnails/' . date('Y/m/d'), 'public');
                 $validated['thumbnail'] = $iconPath;
             }
     
