@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePackageTourRequest;
+use App\Models\Category;
 use App\Models\PackageTour;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class PackageTourController extends Controller
 {
@@ -31,9 +35,19 @@ class PackageTourController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePackageTourRequest $request)
     {
         //
+        DB::transaction(function() use ($request){
+            $validated = $request->validated();
+
+            if($request->hasFile('thumbnail')){
+                $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+                $validated['thumbnail'] = $iconPath;
+            }
+    
+            $validated['slug'] = Str::slug($validated['name']);
+        });
     }
 
     /**
