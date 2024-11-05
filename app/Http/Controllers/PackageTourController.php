@@ -52,7 +52,10 @@ class PackageTourController extends Controller
 
             if($request->hasFile('photos')){
                 foreach($request->file('photos') as $photo){
-                    $photoPath = $request->file('photo')->store('package_photos', 'public');
+                    $photoPath = $photo->file('photo')->store('package_photos', 'public');
+                    $packageTour->package_photos()->create([
+                        'photo' => $photoPath
+                    ]);
                 }
             }
         });
