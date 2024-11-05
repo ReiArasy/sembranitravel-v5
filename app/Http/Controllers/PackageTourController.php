@@ -47,6 +47,10 @@ class PackageTourController extends Controller
             }
     
             $validated['slug'] = Str::slug($validated['name']);
+
+            $packageTour = PackageTour::create($validated);
+
+            
         });
     }
 
