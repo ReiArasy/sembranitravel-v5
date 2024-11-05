@@ -50,7 +50,11 @@ class PackageTourController extends Controller
 
             $packageTour = PackageTour::create($validated);
 
-            
+            if($request->hasFile('photos')){
+                foreach($request->file('photos') as $photo){
+                    $photoPath = $request->file('photo')->store('package_photos', 'public');
+                }
+            }
         });
     }
 
