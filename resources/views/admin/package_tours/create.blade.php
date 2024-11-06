@@ -30,7 +30,7 @@
                         <select name="category_id" id="category_id" class="py-3 rounded-lg pl-3 w-full border border-slate-300">
                             <option value="">Choose category</option>
                             @foreach($categories as $category)
-                            <option value="">Choose category</option>
+                            <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
 
