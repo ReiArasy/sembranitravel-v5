@@ -60,6 +60,9 @@ class PackageTourController extends Controller
                 }
             }
         });
+
+
+        return redirect()->route('admin.package_tours.index');
     }
 
     /**
