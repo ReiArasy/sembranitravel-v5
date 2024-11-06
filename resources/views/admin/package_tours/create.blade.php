@@ -9,7 +9,7 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg">
                 
-                <form method="POST" action="#" enctype="multipart/form-data">
+                <form method="POST" action="{{route('admin.package_tours.store')}}" enctype="multipart/form-data">
                     @csrf
 
                     <div>
@@ -28,6 +28,8 @@
                         <x-input-label for="category" :value="__('category')" />
                         
                         <select name="category_id" id="category_id" class="py-3 rounded-lg pl-3 w-full border border-slate-300">
+                            <option value="">Choose category</option>
+                            
                             <option value="">Choose category</option>
                         </select>
 
