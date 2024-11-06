@@ -29,8 +29,9 @@
                         
                         <select name="category_id" id="category_id" class="py-3 rounded-lg pl-3 w-full border border-slate-300">
                             <option value="">Choose category</option>
-                            
+                            @foreach($categories as $category)
                             <option value="">Choose category</option>
+                            @endforeach
                         </select>
 
                         <x-input-error :messages="$errors->get('category')" class="mt-2" />
