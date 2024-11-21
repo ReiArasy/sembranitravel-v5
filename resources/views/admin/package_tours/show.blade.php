@@ -38,7 +38,7 @@
                         <a href="{{route('admin.package_tours.edit', $packageTour)}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action="{{route('admin.package_tours.destroy')}}" method="POST">
+                        <form action="{{route('admin.package_tours.destroy', $packageTour)}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
