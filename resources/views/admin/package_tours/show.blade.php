@@ -57,14 +57,12 @@
                     @empty
                     <p>Foto belum tersedia</p>
                     @endforelse
-
                 </div>
 
                 <div>
                     <h3 class="text-indigo-950 text-xl font-bold">About</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta porro, minima rerum laboriosam quas veritatis nam iste aspernatur architecto! Expedita repudiandae libero voluptates fugiat, aliquam impedit voluptate nisi consequuntur necessitatibus.
-                </p>
+                    {{$packageTour->about}}
                 </div>
 
             </div>
