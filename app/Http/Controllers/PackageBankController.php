@@ -73,6 +73,7 @@ class PackageBankController extends Controller
      */
     public function update(UpdatePackageBankRequest $request, PackageBank $packageBank)
     {
+        
         //
         DB::transaction(function() use ($request, $packageBank){
 
