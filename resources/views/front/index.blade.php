@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <link href="{{asset('output.css')}}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -12,13 +12,26 @@
     <section id="content" class="max-w-[640px] w-full mx-auto bg-[#F9F2EF] min-h-screen flex flex-col gap-8 pb-[120px]">
         <nav class="mt-8 px-4 w-full flex items-center justify-between">
           <div class="flex items-center gap-3">
+
+          @auth
+            <div class="w-12 h-12 border-4 border-white rounded-full overflow-hidden flex shrink-0 shadow-[6px_8px_20px_0_#00000008]">
+              <img src="{{Storage::url(Auth::user()->avatar)}}" class="w-full h-full object-cover object-center" alt="photo">
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-xs tracking-035">Welcome!</p>
+              <p class="font-semibold">{{Auth::user()->name}}</p>
+            </div>
+            @endauth
+            @guest
             <div class="w-12 h-12 border-4 border-white rounded-full overflow-hidden flex shrink-0 shadow-[6px_8px_20px_0_#00000008]">
               <img src="assets/photos/pfp.png" class="w-full h-full object-cover object-center" alt="photo">
             </div>
             <div class="flex flex-col gap-1">
               <p class="text-xs tracking-035">Welcome!</p>
-              <p class="font-semibold">Victoria Watson</p>
+              <p class="font-semibold">Let's Tour With Sembrani!</p>
             </div>
+            @endguest
+
           </div>
           <a href="">
             <div class="w-12 h-12 rounded-full bg-white overflow-hidden flex shrink-0 items-center justify-center shadow-[6px_8px_20px_0_#00000008]">
@@ -300,8 +313,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- JavaScript -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="js/flickity-slider.js"></script>
-    <script src="js/two-lines-text.js"></script>
+    <script src="{{asset('js/flickity-slider.js')}}"></script>
+    <script src="{{asset('js/two-lines-text.js')}}"></script>
 
 </body>
 </html>

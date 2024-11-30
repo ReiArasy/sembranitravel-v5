@@ -18,6 +18,7 @@
               <h1 class="font-semibold text-2xl leading-[42px] ">Sign Up | Daftar Akun</h1>
               <p class="text-sm leading-[25px] tracking-[0.6px] text-darkGrey">Enter valid data to create your account</p>
             </div>
+
             <div class="flex flex-col gap-[15px] w-full max-w-[311px]">
               <div class="flex flex-col gap-1 w-full">
                 <p class="font-semibold">Avatar</p>
@@ -25,18 +26,10 @@
                   <div class="w-4 h-4 flex shrink-0">
                     <img src="assets/icons/gallery-2.svg" alt="icon">
                   </div>
-                  <button type="button" id="upload-file" class="flex items-center gap-3">
-                    <div id="chosse-file-dummy-btn" class="border border-[#8D9397] bg-[#F3F4F8] py-1 px-2 rounded-lg text-nowrap text-sm leading-[22px] tracking-035 h-fit">Choose File</div>
-                    <div>
-                      <p id="placeholder" class="text-nowrap text-[#BFBFBF] text-sm tracking-035 leading-[22px] text-left">No file chosen</p>
-                      <div id="file-info" class="hidden flex flex-row flex-nowrap gap-3 items-center">
-                        <span id="fileName" class="text-sm tracking-035 leading-[22px] text-nowrap"></span>
+                  <input type="file" name="avatar" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]">
                       </div>
                     </div>
-                    <input type="file" name="file" id="file" class="hidden">
-                  </button>
-                </div>
-              </div>
+                    
               <div class="flex flex-col gap-1 w-full">
                 <p class="font-semibold">Full Name</p>
                 <div class="flex items-center gap-3 p-[16px_12px] border border-[#BFBFBF] rounded-xl focus-within:border-[#4D73FF] transition-all duration-300">
