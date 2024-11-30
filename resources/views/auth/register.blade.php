@@ -15,7 +15,7 @@
           <form method="" action="{{ route('register') }}" class="flex flex-col w-full bg-white p-[24px_16px] gap-8 rounded-[22px] items-center">
             @csrf
             <div class="flex flex-col gap-1 text-center">
-              <h1 class="font-semibold text-2xl leading-[42px] ">Sign Up</h1>
+              <h1 class="font-semibold text-2xl leading-[42px] ">Sign Up | Daftar Akun</h1>
               <p class="text-sm leading-[25px] tracking-[0.6px] text-darkGrey">Enter valid data to create your account</p>
             </div>
             <div class="flex flex-col gap-[15px] w-full max-w-[311px]">
@@ -92,7 +92,7 @@
               </div>
             </div>
             <button type="submit" class="bg-[#4D73FF] p-[16px_24px] w-full max-w-[311px] rounded-[10px] text-center text-white font-semibold hover:bg-[#06C755] transition-all duration-300">Sign up</button>
-            <p class="text-center text-sm tracking-035 text-darkGrey">Already have account? <a href="index.html" class="text-[#4D73FF] font-semibold tracking-[0.6px]">Sign In</a></p>
+            <p class="text-center text-sm tracking-035 text-darkGrey">Already have account? <a href="{{ route('login')}}" class="text-[#4D73FF] font-semibold tracking-[0.6px]">Sign In</a></p>
           </form>
         </div>
     </section>
