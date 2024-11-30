@@ -12,7 +12,7 @@
           <div class="w-[calc(100%-26px)] rounded-[20px] overflow-hidden relative">
             <img src="assets/backgrounds/Asset-signup.png" class="w-full h-full object-contain" alt="background">
           </div>
-          <form method="" action="{{ route('register') }}" class="flex flex-col w-full bg-white p-[24px_16px] gap-8 rounded-[22px] items-center">
+          <form method="POST" action="{{ route('register') }}" class="flex flex-col w-full bg-white p-[24px_16px] gap-8 rounded-[22px] items-center" enctype="multipart/form-data">
             @csrf
             <div class="flex flex-col gap-1 text-center">
               <h1 class="font-semibold text-2xl leading-[42px] ">Sign Up | Daftar Akun</h1>
@@ -43,7 +43,7 @@
                   <div class="w-4 h-4 flex shrink-0">
                     <img src="assets/icons/user-flat-black.svg" alt="icon">
                   </div>
-                  <input type="text" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Write your full name">
+                  <input type="text" name="name" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Write your full name">
                 </div>
               </div>
               <div class="flex flex-col gap-1 w-full">
@@ -52,7 +52,7 @@
                   <div class="w-4 h-4 flex shrink-0">
                     <img src="assets/icons/call.svg" alt="icon">
                   </div>
-                  <input type="tel" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Your valid phone number">
+                  <input type="tel" name="phone_number" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Your valid phone number">
                 </div>
               </div>
               <div class="flex flex-col gap-1 w-full">
@@ -61,7 +61,7 @@
                   <div class="w-4 h-4 flex shrink-0">
                     <img src="assets/icons/sms.svg" alt="icon">
                   </div>
-                  <input type="email" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Your email address">
+                  <input type="email" name="email" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Your email address">
                 </div>
               </div>
               <div class="flex flex-col gap-1 w-full">
@@ -70,7 +70,7 @@
                   <div class="w-4 h-4 flex shrink-0">
                     <img src="assets/icons/password-lock.svg" alt="icon">
                   </div>
-                  <input type="password" id="password" name="" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Enter your valid password">
+                  <input type="password" id="password" name="password" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Enter your valid password">
                   <button type="button" class="reveal-password w-4 h-4 flex shrink-0" onclick="togglePasswordVisibility('password', this)">
                     <img src="assets/icons/password-eye.svg" class="see-password" alt="icon">
                     <img src="assets/icons/password-eye-slash.svg" class="hide-password hidden" alt="icon">
@@ -83,7 +83,7 @@
                   <div class="w-4 h-4 flex shrink-0">
                     <img src="assets/icons/password-lock.svg" alt="icon">
                   </div>
-                  <input type="password" id="confirm-password" name="" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Confirm your valid password">
+                  <input type="password" id="confirm-password" name="password_confirmation" class="appearance-none outline-none w-full text-sm placeholder:text-[#BFBFBF] tracking-[0.35px]" placeholder="Confirm your valid password">
                   <button type="button" class="reveal-password w-4 h-4 flex shrink-0" onclick="togglePasswordVisibility('confirm-password', this)">
                     <img src="assets/icons/password-eye.svg" class="see-password" alt="icon">
                     <img src="assets/icons/password-eye-slash.svg" class="hide-password hidden" alt="icon">
