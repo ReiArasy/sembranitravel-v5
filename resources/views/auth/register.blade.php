@@ -13,6 +13,7 @@
             <img src="assets/backgrounds/Asset-signup.png" class="w-full h-full object-contain" alt="background">
           </div>
           <form method="" action="{{ route('register') }}" class="flex flex-col w-full bg-white p-[24px_16px] gap-8 rounded-[22px] items-center">
+            @csrf
             <div class="flex flex-col gap-1 text-center">
               <h1 class="font-semibold text-2xl leading-[42px] ">Sign Up</h1>
               <p class="text-sm leading-[25px] tracking-[0.6px] text-darkGrey">Enter valid data to create your account</p>
