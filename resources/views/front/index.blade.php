@@ -39,7 +39,7 @@
             </div>
           </a>
         </nav>
-        <h1 class="font-semibold text-2xl leading-[36px] text-center">Explore New<br>Experience with Us</h1>
+        <h1 class="font-semibold text-2xl leading-[36px] text-center">Explore with Sembrani <br>Experience with Us</h1>
         <div id="categories" class="flex flex-col gap-3">
           <h2 class="font-semibold px-4">Categories</h2>
           <div class="main-carousel buttons-container">
@@ -107,7 +107,7 @@
                         Rp {{number_format($tour->price, 0, ',', '.')}}
                       </span><br>
                       <span class="text-darkGrey">
-                      {{$tour->days}} days
+                      {{$tour->days}} Days
                       </span>
                     </p>
                     <div class="flex items-center gap-1 justify-end">
@@ -136,27 +136,38 @@
             </div>
           </div>
         </div>
+
         <div id="explore" class="flex flex-col px-4 gap-3">
           <h2 class="font-semibold">More to Explore</h2>
+          
+          @forelse($package_tours as $tour)
           <a href="details.html" class="card">
             <div class="bg-white p-4 flex flex-col gap-3 rounded-[26px] shadow-[6px_8px_20px_0_#00000008]">
               <div class="w-full h-full aspect-[311/150] rounded-xl overflow-hidden">
-                <img src="assets/thumbnails/castle.jpg" class="w-full h-full object-cover object-center" alt="thumbnail">
+                <img src="{{Storage::url($tour->thumbnail)}}" class="w-full h-full object-cover object-center" alt="thumbnail">
               </div>
               <div class="flex justify-between gap-2">
                 <div class="flex flex-col gap-1">
-                  <p class="font-semibold two-lines">Fortress Osaka Castle Park</p>
+                  <p class="font-semibold two-lines">
+                  {{$tour->name}}
+                  </p>
                   <div class="flex items-center gap-1">
                     <div class="w-4 h-4 flex shrink-0">
                       <img src="assets/icons/location-map.svg" alt="icon">
                     </div>
-                    <span class="text-sm text-darkGrey tracking-035">Osaka, Japan</span>
+                    <span class="text-sm text-darkGrey tracking-035">
+                    {{$tour->location}}
+                    </span>
                   </div>
                 </div>
                 <div class="flex flex-col gap-1 text-right">
                   <p class="text-sm leading-[21px]">
-                    <span class="font-semibold text-[#4D73FF] text-nowrap">Rp 25.000.000</span><br>
-                    <span class="text-darkGrey">/10days</span>
+                    <span class="font-semibold text-[#4D73FF] text-nowrap">
+                    Rp {{number_format($tour->price, 0, ',', '.')}}
+                    </span><br>
+                    <span class="text-darkGrey">
+                    /{{$tour->days}} Days
+                    </span>
                   </p>
                   <div class="flex items-center gap-1 justify-end">
                     <div class="w-4 h-4 flex shrink-0">
@@ -168,67 +179,11 @@
               </div>
             </div>
           </a>
-          <a href="details.html" class="card">
-            <div class="bg-white p-4 flex flex-col gap-3 rounded-[26px] shadow-[6px_8px_20px_0_#00000008]">
-              <div class="w-full h-full aspect-[311/150] rounded-xl overflow-hidden">
-                <img src="assets/thumbnails/santorini.jpg" class="w-full h-full object-cover object-center" alt="thumbnail">
-              </div>
-              <div class="flex justify-between gap-2">
-                <div class="flex flex-col gap-1">
-                  <p class="font-semibold two-lines">Santorini Island Aegean Sea</p>
-                  <div class="flex items-center gap-1">
-                    <div class="w-4 h-4 flex shrink-0">
-                      <img src="assets/icons/location-map.svg" alt="icon">
-                    </div>
-                    <span class="text-sm text-darkGrey tracking-035">South Aegean, Greece</span>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-1 text-right">
-                  <p class="text-sm leading-[21px]">
-                    <span class="font-semibold text-[#4D73FF] text-nowrap">Rp 20.000.000</span><br>
-                    <span class="text-darkGrey">/8days</span>
-                  </p>
-                  <div class="flex items-center gap-1 justify-end">
-                    <div class="w-4 h-4 flex shrink-0">
-                      <img src="assets/icons/Star.svg" alt="icon">
-                    </div>
-                    <span class="font-semibold text-sm leading-[21px]">4.8</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="details.html" class="card">
-            <div class="bg-white p-4 flex flex-col gap-3 rounded-[26px] shadow-[6px_8px_20px_0_#00000008]">
-              <div class="w-full h-full aspect-[311/150] rounded-xl overflow-hidden">
-                <img src="assets/thumbnails/athena.jpg" class="w-full h-full object-cover object-center" alt="thumbnail">
-              </div>
-              <div class="flex justify-between gap-2">
-                <div class="flex flex-col gap-1">
-                  <p class="font-semibold two-lines">Temple of Athena Nike</p>
-                  <div class="flex items-center gap-1">
-                    <div class="w-4 h-4 flex shrink-0">
-                      <img src="assets/icons/location-map.svg" alt="icon">
-                    </div>
-                    <span class="text-sm text-darkGrey tracking-035">Acropolis, Greeces</span>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-1 text-right">
-                  <p class="text-sm leading-[21px]">
-                    <span class="font-semibold text-[#4D73FF] text-nowrap">Rp 30.000.000</span><br>
-                    <span class="text-darkGrey">/8days</span>
-                  </p>
-                  <div class="flex items-center gap-1 justify-end">
-                    <div class="w-4 h-4 flex shrink-0">
-                      <img src="assets/icons/Star.svg" alt="icon">
-                    </div>
-                    <span class="font-semibold text-sm leading-[21px]">5</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
+          @empty
+          <p>Paket Tour belum tersedia</p>
         </div>
+        @endforelse
+
         <div class="navigation-bar fixed bottom-0 z-50 max-w-[640px] w-full h-[85px] bg-white rounded-t-[25px] flex items-center justify-evenly py-[45px]">
           <a href="" class="menu">
             <div class="flex flex-col justify-center w-fit gap-1">
