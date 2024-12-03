@@ -82,7 +82,7 @@
           <div class="main-carousel card-container">
 
             @forelse($package_tours as $tour)
-            <a href="details.html" class="group px-2 first-of-type:pl-4 last-of-type:pr-4">
+            <a href="{{route('front.details', $tour->slug)}}" class="group px-2 first-of-type:pl-4 last-of-type:pr-4">
               <div class="w-[288px] p-4 flex flex-col gap-3 rounded-[26px] bg-white shadow-[6px_8px_20px_0_#00000008]">
                 <div class="w-full h-[330px] rounded-xl flex shrink-0 overflow-hidden">
                   <img src="{{Storage::url($tour->thumbnail)}}" class="w-full h-full object-cover" alt="thumbnails">
@@ -141,7 +141,7 @@
           <h2 class="font-semibold">More to Explore</h2>
           
           @forelse($package_tours as $tour)
-          <a href="details.html" class="card">
+          <a href="{{route('front.details', $tour->slug)}}" class="card">
             <div class="bg-white p-4 flex flex-col gap-3 rounded-[26px] shadow-[6px_8px_20px_0_#00000008]">
               <div class="w-full h-full aspect-[311/150] rounded-xl overflow-hidden">
                 <img src="{{Storage::url($tour->thumbnail)}}" class="w-full h-full object-cover object-center" alt="thumbnail">
