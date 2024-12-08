@@ -43,7 +43,7 @@
               </div>
               <div class="flex flex-col gap-1">
                 <p class="text-sm leading-[22px] tracking-[0.35px] text-darkGrey">Location</p>
-                <p class="font-semibold text-sm tracking-035">Bali, Indonesia</p>
+                <p class="font-semibold text-sm tracking-035"> {{$packageTour->location}}</p>
               </div>
             </div>
             <div class="flex flex-col gap-1">
@@ -139,7 +139,7 @@
         <div class="navigation-bar fixed bottom-0 z-50 max-w-[640px] w-full h-[85px] bg-white rounded-t-[25px] flex items-center justify-between px-6">
           <div class="flex flex-col justify-center gap-1">
             <p class="text-darkGrey text-sm tracking-035 leading-[22px]">Total Price</p>
-            <p class="text-blue font-semibold text-lg leading-[26px] tracking-[0.6px]">Rp 900.000<span class="font-normal text-sx leading-[20px] tracking-035 text-darkGrey">/pack</span></p>
+            <p class="text-blue font-semibold text-lg leading-[26px] tracking-[0.6px]">Rp {{number_format($packageTour->price, 0, ',', '.')}}<span class="font-normal text-sx leading-[20px] tracking-035 text-darkGrey">/pack</span></p>
           </div>
           <a href="booking.html" class="p-[16px_24px] rounded-xl bg-blue w-fit text-white hover:bg-[#06C755] transition-all duration-300">Book Now</a>
         </div>
