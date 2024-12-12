@@ -15,7 +15,7 @@
           <p class="text-center m-auto font-semibold">Payment</p>
           <div class="w-12"></div>
         </nav>
-        <form enctype="multipart/form-data" action="{{route('front.book_payment_store', $packageBooking->id))}}" class="flex flex-col gap-8" method="POST">
+        <form enctype="multipart/form-data" action="{{route('front.book_payment_store', $packageBooking->id)}}" class="flex flex-col gap-8" method="POST">
             @csrf
             @method('PATCH')
           <div class="flex flex-col gap-3 px-4 ">
