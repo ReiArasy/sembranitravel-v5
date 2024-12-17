@@ -32,7 +32,7 @@ class PackageBooking extends Model
    
     // cek costumer yang booking siapa,tour nya apa, bank nya apa
     public function customer(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function tour(){
